@@ -1,0 +1,44 @@
+Aula 01
+
+TRÊS AMBIENTES:
+  Desenvolvimento (quando rodamos local), produção (termo utilizado quando a aplicação está no ar) testes.
+Veja que, no arquivo gemfile temos algumas gems separadas por ambiente: não faz sentido utilizar gems
+voltas para desenvolvimento em um servidor (onde roda apl. final) não é verdade?
+
+COMANDO bin/setup:
+  Trata-se de um arquivo de script/shell
+
+
+
+GITHUB - Comandos utilizados
+  Procure comitar seu código a cada etapa realizada, de forma a monitorar seu projeto
+passo a passo...
+
+git remote
+
+git remote add origin https://github.com/Vilelab/rental-cars.git
+
+git remote
+
+git remote -v
+
+origin e simplesmente o nome que eu atribuo a um determinado endereço (no caso o do meu repo git indicado acima)
+
+
+GENERATE
+  Rails generate é, basicamente, um comando pra gerar código (de forma resumida).
+
+RSPEC
+  TDD - É um conceito muito importante! Nossas aplicações inclusive serão orientadas a teste... devemos atentar nisto
+Na live de 09/04 os devs mais experientes deram uma boa ênfase nesse conceito inclusive
+Depois de instalar a gem (rspec-rails), crie uma pasta chamada FEATURES em SPEC, e jogue os arquivos de testes la.
+FEATURES é a past de testes padrão para o Capybara
+  FEATURE - Traz uma funcionalidade. Ex.: "Visitor open home page", ...
+  CENÁRIO - Geralmente o primeiro é um de sucesso, depois temos outros "CPF inválido", "em branco", "Duplicado",... são situações
+    que vc estabelece com seu time, de forma a testar seu código
+
+
+Dicas: não saia instalando plugins atrás do outro... isso gera excesso de código que vc nem sabe para que serve...
+       idem com o generate... tome cuidado
+
+
