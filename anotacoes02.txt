@@ -1,0 +1,39 @@
+-Lembrete: testes capybara vão no sub-diretório features (dentro do dir. spec)
+- Rode o rspec e divida o problema em partes!
+
+Ex. de primeira linha:
+rspec ./spec/features/visitor_view_manufacturers_spec.rb:4
+
+
+PASSOS QUE UM TESTE DEVE TER:
+
+  -Arrange - Preparação de dados (ex.: criar instâncias de um objeto)
+  -Act - Ação, etapa onde aplicação será aberta
+  -Assert
+
+Toda aplicação moderna terá um bd ligado a ela! Usamos um framework justamente tendo em vista
+tais facilidades: muitos métodos e funcionalidades já virão prontos. Uma dessa é justamente
+o "models". Para que possamos utilizar os recursos do framework (models, controllers) devemos
+aplicar herança em nossas classes.
+
+MVC?
+
+Para gerenciar um BD, o rails tem uma estrutura chamada MIGRATIONS. Para criar e manipular os 
+atributos de um modelo, utilizamos as MIGRATIONS. O nome da tabela no banco será sempre o nome 
+do model no plural (convenção do rails). Person - People / Manufacturer - Manufacturers (veja schema.rb na pasta db)
+
+Vamos usar DOIS tipos de generate em nosso treinamento! Por que? Porque generate gera códigos, sendo
+que muitas vezes nem sabemos pra que ele serve, além de trechos supérfluos.
+- GENERATE MODEL
+- GENERATE MIGRATION
+
+   #### SO ISSO! ####
+
+
+Para cada MODEL criado, o rails cria 7 rotas diferentes para usarmos. Tais rotas recebem
+o nome de RESOURCES.
+
+RODE O TDD A CADA ETAPA DE SEU CODIGO! ISSO E EXTREMAMENTE IMPORTANTE!
+
+PARAMS - É uma palavra reservada dentro do controlador, que recebe tudo que é enviado via formulário...
+   params é uma hash
