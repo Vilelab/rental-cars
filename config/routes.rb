@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #get '/', to: home#index
 
 
-  resources :manufacturers, only: [:index, :show] #o only filtras as ações disponíveis
+  resources :manufacturers, only: [:index, :show, :new, :create] #o only filtras as ações disponíveis
 
   #digite rails routes para ver as rotas criadas e suas respectivas actions (ações)
 
