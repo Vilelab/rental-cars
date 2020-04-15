@@ -2,7 +2,7 @@
 
 <ul>
 <% @subsidiaries.each do |s|%>
-  <li> <%= s.name %>     </li>
+  <li> <%= link_to s.name, subsidiary_path(s.id) %>     </li>
   <li> <%= s.cnpj %>     </li>
   <li> <%= s.address  %> </li>
 <%end%>
