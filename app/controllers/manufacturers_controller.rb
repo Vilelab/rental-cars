@@ -11,6 +11,7 @@ class ManufacturersController < ApplicationController
   def create
     @manufacturer = Manufacturer.new(params.require(:manufacturer).permit(:name))
     @manufacturer.save
+   #redirect_to manufacturer_path(id: @manufacturer.id)
     redirect_to @manufacturer
   end
 

@@ -1,0 +1,18 @@
+  CURIOSIDADE: Grep (comando de terminal)
+
+  CURIOSIDADE: W3 schools (bom site, pertence ao consorcio que adm. a net)
+
+  Formulários: em rails utilizamos formularios do rails helper ao inves
+   dos forms html usuais, pois ele infere algumas coisas da convenção
+   quando tratando sua applicação e os erros.
+
+  Dica: View não é feita pra acessar camada de dados do objeto... instancie
+    o manufacturer na action, não na view. O controller e usado pra popular 
+    dados, não a view.
+
+ Dica: usar doc da versão rails que você está usando...
+
+ CURIOSIDADE: DESIGN PATTERNS? 
+
+  Create utiliza o metodo http POST, portanto não exige view: apenas encaminha
+  para uma no fim de sua execução...
