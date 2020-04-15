@@ -13,9 +13,9 @@ feature 'User register customer' do
     click_on 'Clientes'
     click_on 'Cadastrar um cliente'
 
-    fill_in 'Nome', with 'Arnaldo'
-    fill_in 'CPF' , with '222'
-    fill_in 'Email', with 'arnaldo_surfista@mymail.com'
+    fill_in 'Nome', with: 'Arnaldo'
+    fill_in 'CPF' , with: '222'
+    fill_in 'Email', with: 'arnaldo_surfista@mymail.com'
     click_on 'Enviar'
 
     expect(current_path).to eq customer_path(Customer.last.id)
