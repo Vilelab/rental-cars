@@ -8,8 +8,8 @@ feature 'Admin view subsidiaries' do
     visit root_path
     click_on 'Filiais'
     
-    expect(page).to have_content('Itu', '4567', 'Rua das monções')
-    expect(page).to have_content('Santos', '7654', 'Estrada das lágrimas')
+    expect(page).to have_content('Itu 4567 Rua das monções')
+    expect(page).to have_content('Santos 7654 Estrada das lágrimas')
   end
 
   scenario 'and view details' do

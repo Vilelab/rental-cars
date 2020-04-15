@@ -1,0 +1,10 @@
+<h1>Filiais</h1>
+
+<ul>
+<% @subsidiaries.each do |s|%>
+  <li> <%= s.name %>     </li>
+  <li> <%= s.cnpj %>     </li>
+  <li> <%= s.address  %> </li>
+<%end%>
+</ul>
+
