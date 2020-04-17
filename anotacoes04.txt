@@ -14,6 +14,9 @@ para que os erros sejam
 
 - BANG( ! )
 
+- DIFERENÇAS ENTRE TESTES (UNITARIO, VISUALIZAÇÂO - OU INTERFACE, INTEGRAÇÂO)
+	O capybara não está tanto pro primeiro 
+
 CODIGO COM COMENTARIOS (CONTROLLER):
   def new
     @manufacturer = Manufacturer.new

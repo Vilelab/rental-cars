@@ -12,6 +12,7 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.new(params.require(:manufacturer).permit(:name))
 	
     if @manufacturer.save
+      flash[:notice] = "Fabricante criado com sucesso"
       redirect_to @manufacturer
     else
       render :new 
