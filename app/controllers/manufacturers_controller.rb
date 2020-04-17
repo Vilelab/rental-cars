@@ -5,14 +5,17 @@ class ManufacturersController < ApplicationController
   end
 
   def new
-
+    @manufacturer = Manufacturer.new
   end
   
   def create
     @manufacturer = Manufacturer.new(params.require(:manufacturer).permit(:name))
-    @manufacturer.save
-   #redirect_to manufacturer_path(id: @manufacturer.id)
-    redirect_to @manufacturer
+	
+    if @manufacturer.save
+      redirect_to @manufacturer
+    else
+      render :new 
+    end
   end
 
   def show

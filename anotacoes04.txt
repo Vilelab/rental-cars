@@ -1,0 +1,43 @@
+Convenção rails: todo método publico declarado no controller é considerado
+uma action.
+Boa prática de segurança: Dê white list ao invés de black list! Vá liberando
+acesso de novas variáveis aos poucos.
+Cuidado com o uso excessivo de gems... quanto maior o numero, mais suscetivel
+a falhas de segurança... sempre pergunte-se se você precisa mesmo...
+
+Ruby, por ser uma linguagem interpretada, demanda a utilização de testes
+para que os erros sejam 
+
+- TEST PYRAMID
+
+- STRONG PARAMETERS
+
+- BANG( ! )
+
+CODIGO COM COMENTARIOS (CONTROLLER):
+  def new
+    @manufacturer = Manufacturer.new
+  end
+  
+  def create
+    @manufacturer = Manufacturer.new(params.require(:manufacturer).permit(:name))
+	    # poderíamos economizar uma linha utilizando ".create": ele faz o new e também o save ao mesmo tempo...
+    if @manufacturer.save
+      redirect_to @manufacturer
+	#redirect_to manufacturer_path(id: @manufacturer.id) - versão longa
+    else
+      render :new  #redirect trocaria de action... trocando de action (seria new no caso) não aplicariamos save, e portanto
+                   #não faríamos a validação do objeto @manufacturer (@valid? e o que eh aplicado por save)
+        # redirect_to new_manufacturer_path
+      # flash[:notice] = "Nome deve ser único"
+	#flash serve, basicamente, para mandar uma msg do controller para a view... não vamos utilizar para validação...
+    end
+  end
+
+
+VIEW /manufacturer/new:
+
+<!--
+<%= flash[:notice] %> caso quisesse mostrar uma msg flash... não é o ideal
+     usaremos o metodo full_messages, que pega todos os erros e joga em um array
+-->
