@@ -6,4 +6,14 @@ class SubsidiariesController < ApplicationController
   def show
     @subsidiary = Subsidiary.find(params[:id])
   end
+
+  def new
+    @subsidiary = Subsidiary.new
+  end
+
+  def create
+   @subsidiary = Subsidiary.new(params.require(:subsidiary).permit(:name, :cnpj, :address))
+   @subsidiary.save
+   redirect_to @subsidiary
+  end
 end
