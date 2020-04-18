@@ -27,8 +27,12 @@ class ManufacturersController < ApplicationController
   def update
     id = params[:id]
     @manufacturer = Manufacturer.find(id)
-    @manufacturer.update(params.require(:manufacturer).permit(:name))
-    redirect_to manufacturer_path
+    if @manufacturer.update(params.require(:manufacturer).permit(:name))
+      flash[:notice] = "Fabricante editado com sucesso"
+      redirecto_to manufacturer_path
+    else
+      render :edit
+    end
   end
 
   def show
