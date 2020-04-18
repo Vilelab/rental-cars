@@ -29,7 +29,7 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.find(id)
     if @manufacturer.update(params.require(:manufacturer).permit(:name))
       flash[:notice] = "Fabricante editado com sucesso"
-      redirecto_to manufacturer_path
+      redirect_to manufacturer_path
     else
       render :edit
     end
