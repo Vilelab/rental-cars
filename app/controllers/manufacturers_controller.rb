@@ -20,7 +20,15 @@ class ManufacturersController < ApplicationController
   end
 
   def edit
+    id = params[:id]
+    @manufacturer = Manufacturer.find(id)
+  end
 
+  def update
+    id = params[:id]
+    @manufacturer = Manufacturer.find(id)
+    @manufacturer.update(params.require(:manufacturer).permit(:name))
+    redirect_to manufacturer_path
   end
 
   def show
