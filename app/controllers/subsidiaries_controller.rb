@@ -22,6 +22,8 @@ class SubsidiariesController < ApplicationController
   end
 
   def update
-
+    @subsidiary = Subsidiary.find(params[:id])
+    @subsidiary.update(params.require(:subsidiary).permit(:name, :cnpj, :address))
+    redirect_to subsidiary_path
   end
 end

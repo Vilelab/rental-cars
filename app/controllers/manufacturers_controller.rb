@@ -4,6 +4,11 @@ class ManufacturersController < ApplicationController
     
   end
 
+  def show
+   id = params[:id]
+   @manufacturer = Manufacturer.find(id)
+  end
+
   def new
     @manufacturer = Manufacturer.new
   end
@@ -35,8 +40,4 @@ class ManufacturersController < ApplicationController
     end
   end
 
-  def show
-   id = params[:id]
-   @manufacturer = Manufacturer.find(id)
-  end
 end
