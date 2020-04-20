@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   #digite rails routes para ver as rotas criadas e suas respectivas actions (ações)
 
   resources :customers, only: [:index, :show, :new, :create]
-  resources :subsidiaries, only: [:index, :show, :new, :create]
+  resources :subsidiaries, only: [:index, :show, :new, :create, :edit]
+  resources :carcategories, only: [:index, :show, :new, :create]
 
 end
