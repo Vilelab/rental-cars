@@ -2,7 +2,8 @@
 
 <ul>
 <% @carcategories.each do |c|%>
-  <li> <%= link_to c.name, carcategory_path(id: c.id) %> </li>
+  <li> <%= link_to "Categoria #{c.name}", carcategory_path(id: c.id) %> </li>
+  <li> <%= number_to_currency  c.daily_rate %> </li>
   
 <%end%>
 </ul>

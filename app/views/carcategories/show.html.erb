@@ -1,8 +1,8 @@
-<h1><%= @carcategory.name %></h1>
+<h1>Categoria <%= @carcategory.name %></h1>
 <lu>
-  <li> <%= @carcategory.daily_rate %> </li>
-  <li> <%= @carcategory.car_insurance %> </li>
-  <li> <%= @carcategory.third_party_insurance %> </li>
+  <li>Diária: <%= number_to_currency @carcategory.daily_rate %> </li>
+  <li>Seguro do Carro: <%= number_to_currency @carcategory.car_insurance %> </li>
+  <li>Seguro para Terceiros: <%= number_to_currency @carcategory.third_part_insurance %> </li>
 </lu>
 
 <p><%= link_to "Voltar", carcategories_path %></p>

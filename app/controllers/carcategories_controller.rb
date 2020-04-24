@@ -23,7 +23,7 @@ class CarcategoriesController < ApplicationController
   end
 
   private def carc_params 
-    params.require(:carcategory).permit(:name, :daily_rate, :car_insurance, :third_party_insurance)
+    params.require(:carcategory).permit(:name, :daily_rate, :car_insurance, :third_part_insurance)
   end
 
   private  def id
