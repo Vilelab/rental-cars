@@ -9,8 +9,8 @@ require 'rails_helper'
       ford = Manufacturer.create!(name: "Ford")
       category = Carcategory.create!(name: "A", daily_rate: 50, car_insurance: 40, 
                                   third_part_insurance: 30)
-      CarModel.create!(name: "Uno", year: "2020", manufacturer: fiat, carcategory: category)
-      CarModel.create!(name: "Ka" , year: "2021", manufacturer: ford, carcategory: category)
+      CarModel.create!(name: "Uno", year: "2020", manufacturer: fiat, carcategory: category, motorization: '1.0', fuel_type: 'Flex')
+      CarModel.create!(name: "Ka" , year: "2021", manufacturer: ford, carcategory: category, motorization: '1.0', fuel_type: 'Flex')
 
       #Act
       visit root_path
