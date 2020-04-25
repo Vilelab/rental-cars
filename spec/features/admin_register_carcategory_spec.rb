@@ -14,16 +14,16 @@ feature 'Admin register carcategory' do
     click_on 'Registrar nova categoria'
 
     fill_in 'Nome', with: 'A'
-    fill_in 'Diária', with: '50.0'
-    fill_in 'Seguro do carro', with: '4000.0'
-    fill_in 'Seguro contra terceiros', with: '2000.0'
+    fill_in 'Diária', with: '50'
+    fill_in 'Seguro do carro', with: '40'
+    fill_in 'Seguro contra terceiros', with: '20'
     click_on 'Enviar'
 
     expect(current_path).to eq carcategory_path(Carcategory.last.id)
     expect(page).to have_content('A')
-    expect(page).to have_content('50.0')
-    expect(page).to have_content('4000.0')
-    expect(page).to have_content('2000.0')
+    expect(page).to have_content('$50')
+    expect(page).to have_content('$40')
+    expect(page).to have_content('$20')
     expect(page).to have_link('Voltar')
   end
 end

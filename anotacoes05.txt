@@ -1,0 +1,19 @@
+Links uteis:
+
+Rails guides - para entender conceitos, ler como como as coisas funcionam
+Rails api    - quando souber qual metodo quer utilizar, voce pode procurar
+		a respeito para customizá-lo
+
+
+
+I18N - Técnica de internacionalização... vale a pena dar uma olhada
+
+Forms:
+  - form_with(recebe model ou url... ou seja, eh uma junção dos dois)
+  - form_tag (recebia um path como parametro)
+  - form_for (recebia um objeto de um model)
+
+
+EXTRAS:
+
+SELETOR C

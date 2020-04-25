@@ -35,6 +35,9 @@ feature 'Admin view car categories' do
   end
 
   scenario 'empty list' do
+    visit root_path
+    click_on 'Categorias de Carros'
 
+    expect(page).to have_content('Nenhuma categoria cadastrada')
   end
 end

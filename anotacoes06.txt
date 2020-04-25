@@ -1,0 +1,16 @@
+Links legais:
+
+  Coding Horror
+
+Quais sao os passos do teste?
+  -Arrange
+  -Act
+  -Assert
+
+Associações: quando criamos um model com references, ele já implementa as associações e
+	cria índices... por isso e imporante utilizar
+
+
+
+Extras:
+	- Normalização de dados
