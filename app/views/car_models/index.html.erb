@@ -6,6 +6,7 @@
       <th>Fabricante</th>
       <th>Nome</th>
       <th>Ano</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -15,6 +16,7 @@
       <td><%= cm.manufacturer.name %></td>
       <td><%= cm.name %></td>
       <td><%= cm.year %></td>
+      <td><%= link_to 'Ver Detalhes', cm %></td>
     </tr>
     <% end %>
   </tbody>

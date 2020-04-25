@@ -9,7 +9,8 @@ Quais sao os passos do teste?
 
 Associações: quando criamos um model com references, ele já implementa as associações e
 	cria índices... por isso e imporante utilizar
-
+O Rails so faz amarrações no momento de criação do model... se precisar alterar depois, vc
+terá de fazê-lo manualmente, no respectivo modelo...
 
 
 Extras:
