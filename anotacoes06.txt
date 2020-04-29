@@ -12,6 +12,10 @@ Associações: quando criamos um model com references, ele já implementa as ass
 O Rails so faz amarrações no momento de criação do model... se precisar alterar depois, vc
 terá de fazê-lo manualmente, no respectivo modelo...
 
+Dica: Ao escrever testes, evite popular muito o banco de dados... muitas vezes criar dois objetos
+	é suficiente (por exemplo)
+
+save_page: debug do capybara
 
 Extras:
 	- Normalização de dados

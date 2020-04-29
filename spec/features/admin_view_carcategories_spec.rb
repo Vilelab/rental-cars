@@ -20,7 +20,14 @@ feature 'Admin view car categories' do
 
   scenario 'view car category details' do
     # Arrange
-    Carcategory.create!(name: 'A', daily_rate: 50, car_insurance: 40, third_part_insurance: 30)
+    carcategory = Carcategory.create!(name: 'A', daily_rate: 50, 
+				      car_insurance: 40, third_part_insurance: 30)
+    manufacturer = Manufacturer.create!(name: 'Fiat')
+
+    uno = CarModel.create!(name: 'Uno', year: '2020', manufacturer: manufacturer, motorization: '1.0',
+		     fuel_type: 'Flex', carcategory: carcategory)
+    mobi = CarModel.create!(name: 'Mobi', year: '2020', manufacturer: manufacturer, motorization: '1.0',
+		     fuel_type: 'Flex', carcategory: carcategory)
 
     # Act
     visit root_path
@@ -32,6 +39,9 @@ feature 'Admin view car categories' do
     expect(page).to have_content('Diária: $50.00')
     expect(page).to have_content('Seguro do Carro: $40.00')
     expect(page).to have_content('Seguro para Terceiros: $30.00')
+    expect(page).to have_link('Uno',  href: car_model_path(uno))
+    expect(page).to have_link('Mobi', href: car_model_path(mobi))
+    expect(page).to have_link('Voltar', href: carcategories_path)
   end
 
   scenario 'empty list' do

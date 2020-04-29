@@ -15,6 +15,7 @@ require 'rails_helper'
       #Act
       visit root_path
       click_on "Modelos de Carros"
+      #click_on "details-#{cm.id}" ou find{"a#details-#{cm.id}"}.click{}
 
       #Assert
       expect(page).to have_content 'Fiat'

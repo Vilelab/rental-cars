@@ -16,6 +16,8 @@ class CarcategoriesController < ApplicationController
 
   def show
     @carcategory = Carcategory.find(id)
+    @car_models = CarModel.where(carcategory_id: @carcategory.id) 
+      #tambem e possivel omitir o id no exemplo acima
   end
 
   def edit
