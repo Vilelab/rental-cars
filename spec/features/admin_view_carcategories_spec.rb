@@ -50,4 +50,30 @@ feature 'Admin view car categories' do
 
     expect(page).to have_content('Nenhuma categoria cadastrada')
   end
+  
+  scenario 'and view filtered car models' do
+    # Arrange
+    carcategory_a = Carcategory.create!(name: 'A', daily_rate: 50, 
+				      car_insurance: 40, third_part_insurance: 30)
+
+    carcategory_b = Carcategory.create!(name: 'B', daily_rate: 50, 
+				      car_insurance: 40, third_part_insurance: 30)
+
+    manufacturer = Manufacturer.create!(name: 'Fiat')
+
+    uno = CarModel.create!(name: 'Uno', year: '2020', manufacturer: manufacturer, motorization: '1.0',
+		     fuel_type: 'Flex', carcategory: carcategory_a)
+    argos = CarModel.create!(name: 'Argos', year: '2020', manufacturer: manufacturer, motorization: '1.0',
+		     fuel_type: 'Flex', carcategory: carcategory_b)
+
+    # Act
+    visit root_path
+    click_on 'Categorias de Carros'
+    click_on 'Categoria A'
+
+    # Assert
+    expect(page).to have_link('Uno',  href: car_model_path(uno))
+    expect(page).not_to have_link('Argos')
+  
+  end
 end
