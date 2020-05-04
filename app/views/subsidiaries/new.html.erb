@@ -1,5 +1,10 @@
 <h1>Registar filial</h1>
 
+<% @subsidiary.errors.full_messages.each do |message| %>
+  <p> <%= message %> </p>
+<% end %> 
+
+
 <%= form_for @subsidiary do |f| %>
   <%= f.label :name, 'Nome' %>
   <%= f.text_field :name %>
@@ -9,3 +14,5 @@
   <%= f.text_field :address %>
   <%= f.submit 'Enviar' %>
 <% end %>
+
+

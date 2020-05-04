@@ -11,10 +11,16 @@ class SubsidiariesController < ApplicationController
     @subsidiary = Subsidiary.new
   end
 
-  def create
+  def create   
    @subsidiary = Subsidiary.new(params.require(:subsidiary).permit(:name, :cnpj, :address))
-   @subsidiary.save
-   redirect_to @subsidiary
+
+   if @subsidiary.save
+     flash[:notice] = "Fabricante criado com sucesso"
+     redirect_to @subsidiary
+   else
+      render :new
+   end
+
   end
 
   def edit
