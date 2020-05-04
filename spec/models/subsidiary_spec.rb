@@ -1,5 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Subsidiary, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  describe Subsidiary do
+    it 'name cannot be blank' do
+      subsidiary = Subsidiary.new(name: '')
+      subsidiary.valid?
+      expect(subsidiary.errors[:name]).to include('Não podem existir campos em branco')
+    end   
+  end
