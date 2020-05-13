@@ -1,0 +1,13 @@
+<h1>Categoria <%= @car_category.name %></h1>
+<lu>
+  <li>Diária: <%= number_to_currency @car_category.daily_rate %> </li>
+  <li>Seguro do Carro: <%= number_to_currency @car_category.car_insurance %> </li>
+  <li>Seguro para Terceiros: <%= number_to_currency @car_category.third_part_insurance %> </li>
+</lu>
+
+<h3>Modelos de carro</h3>
+<% @car_category.car_models.each do |car_model|%>
+  <%= link_to car_model.name, car_model %>
+<% end %>
+
+<p><%= link_to "Voltar", car_categories_path %></p>

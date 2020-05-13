@@ -5,5 +5,8 @@
 <%= link_to 'Fabricantes', manufacturers_path %>
 <%= link_to 'Clientes'   , customers_path %>
 <%= link_to 'Filiais'    , subsidiaries_path%>
-<%= link_to 'Categorias de Carros' ,  carcategories_path%>
+<%= link_to 'Categorias de Carros' ,  car_categories_path%>
 <%= link_to 'Modelos de Carros' , car_models_path%>
+<%= link_to 'Locações', rentals_path%>
+
+<%= I18n.localize(Time.zone.now)%>

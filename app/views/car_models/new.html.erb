@@ -13,8 +13,8 @@
   <%= f.label :manufacturer_id, 'Fabricante' %>
   <%= f.collection_select :manufacturer_id, @manufacturers, :id, :name %>
 
-  <%= f.label :carcategory_id, 'Categoria de Carro' %>
-  <%= f.collection_select :carcategory_id, @carcategories, :id, :name %>
+  <%= f.label :car_category_id, 'Categoria de Carro' %>
+  <%= f.collection_select :car_category_id, @car_categories, :id, :name %>
   
   <%= f.submit 'Enviar'%>
 <% end %>

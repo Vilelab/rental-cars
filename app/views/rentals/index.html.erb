@@ -1,0 +1,18 @@
+<h1>Locações</h1>
+
+<%= link_to 'Registrar nova locação', new_rental_path %>
+
+<% @rentals.each do |rental| %>
+  <dl>
+    <dt>Código</dt>
+    <dd><%= rental.code %></dd>
+    <dt>Data de início:</dt>
+    <dd><%= rental.start_date %></dd>
+    <dt>Data de término:</dt>
+    <dd><%= rental.end_date %></dd>
+    <dt>Cliente:</dt>
+    <dd><%= rental.customer.name %></dd>
+    <dt>Categoria:</dt>
+    <dd><%= rental.car_category.name %></dd>
+  </dl>
+<% end %>

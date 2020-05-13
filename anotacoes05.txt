@@ -2,7 +2,7 @@ Links uteis:
 
 Rails guides - para entender conceitos, ler como como as coisas funcionam
 Rails api    - quando souber qual metodo quer utilizar, voce pode procurar
-		a respeito para customizá-lo
+		a respeito para customizá-lo (link_to por exemplo)
 
 
 
@@ -13,7 +13,24 @@ Forms:
   - form_tag (recebia um path como parametro)
   - form_for (recebia um objeto de um model)
 
+  - Toda tag precisa de 2 itens obrigatórios:
+    - uma URL para onde enviará os dados
+    - o verbo HTTP que vai usar para enviar os dados
+
+  IMPORTANTE: Inclua o "local: true" nos formulários... sinaliza que a aplicação não espera
+  nenhuma requisição javascript e q a aplicação está rodando localmente... podemos ter problemas, então favor colocar
+
+  NOVO: before_action :set_balala, only: [:show, :edit, :update]
+    Esse comando funciona como validador... colocando no começo do controller da pra indicar
+    que esse metodo deve ser executado antes das respectivas actions...
+
+
+Também usamos migration para adicionar um atributo no model nessa lição (tem nos guias)
+Diferença entre have_content e have_css no capybara
+
 
 EXTRAS:
 
 SELETOR C
+
+

@@ -5,7 +5,7 @@ feature 'Admin register carcategory' do
     visit root_path
     click_on 'Categorias de Carros'
 
-    expect(page).to have_link('Registrar nova categoria', href: new_carcategory_path)
+    expect(page).to have_link('Registrar nova categoria', href: new_car_category_path)
   end
 
   scenario 'successfully' do
@@ -19,11 +19,11 @@ feature 'Admin register carcategory' do
     fill_in 'Seguro contra terceiros', with: '20'
     click_on 'Enviar'
 
-    expect(current_path).to eq carcategory_path(Carcategory.last.id)
+    expect(current_path).to eq car_category_path(CarCategory.last.id)
     expect(page).to have_content('A')
-    expect(page).to have_content('$50')
-    expect(page).to have_content('$40')
-    expect(page).to have_content('$20')
+    expect(page).to have_content('R$ 50,00')
+    expect(page).to have_content('R$ 40,00')
+    expect(page).to have_content('R$ 20,00')
     expect(page).to have_link('Voltar')
   end
 end

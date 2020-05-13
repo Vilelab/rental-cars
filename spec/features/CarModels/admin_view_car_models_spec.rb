@@ -7,10 +7,10 @@ require 'rails_helper'
 
       fiat = Manufacturer.create!(name: "Fiat")
       ford = Manufacturer.create!(name: "Ford")
-      category = Carcategory.create!(name: "A", daily_rate: 50, car_insurance: 40, 
+      category = CarCategory.create!(name: "A", daily_rate: 50, car_insurance: 40, 
                                   third_part_insurance: 30)
-      CarModel.create!(name: "Uno", year: "2020", manufacturer: fiat, carcategory: category, motorization: '1.0', fuel_type: 'Flex')
-      CarModel.create!(name: "Ka" , year: "2021", manufacturer: ford, carcategory: category, motorization: '1.0', fuel_type: 'Flex')
+      CarModel.create!(name: "Uno", year: "2020", manufacturer: fiat, car_category: category, motorization: '1.0', fuel_type: 'Flex')
+      CarModel.create!(name: "Ka" , year: "2021", manufacturer: ford, car_category: category, motorization: '1.0', fuel_type: 'Flex')
 
       #Act
       visit root_path
@@ -35,10 +35,10 @@ require 'rails_helper'
       #Arrange
             
       fiat  = Manufacturer.create!(name: "Fiat")
-      cat_a = Carcategory.create!(name: "A", daily_rate: 50, car_insurance: 40, 
+      cat_a = CarCategory.create!(name: "A", daily_rate: 50, car_insurance: 40, 
                                   third_part_insurance: 30)
 
-      CarModel.create!(name: "Uno", year: "2020", manufacturer: fiat, motorization: '1.0', fuel_type: 'Flex', carcategory: cat_a)
+      CarModel.create!(name: "Uno", year: "2020", manufacturer: fiat, motorization: '1.0', fuel_type: 'Flex', car_category: cat_a)
       
       #Act
       visit root_path
@@ -52,7 +52,7 @@ require 'rails_helper'
       expect(page).to have_content 'Motor: 1.0'
       expect(page).to have_content 'Combustível: Flex'
       expect(page).to have_content 'Categoria: A'
-      expect(page).to have_content 'Diária: $50.00' 
+      expect(page).to have_content 'Diária: R$ 50,00' 
 
     end
   end

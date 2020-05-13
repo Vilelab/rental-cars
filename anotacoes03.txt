@@ -1,18 +1,42 @@
-  CURIOSIDADE: Grep (comando de terminal)
+  CURIOSIDADE: Grep (comando de terminal) - É uma espécie de filtro
 
-  CURIOSIDADE: W3 schools (bom site, pertence ao consorcio que adm. a net)
+  CURIOSIDADE: W3 schools (bom site, pertence ao consorcio que adm. a net). Fonte de consulta
 
-  Formulários: em rails utilizamos formularios do rails helper ao inves
+  CURIOSIDADE: CTRL + CLICK (Abre link no VSCODE)
+
+  CURIOSIDADE: Em Ruby TUDO é um objeto
+
+  Resources (no arquivo de rotas): Por que utilizamos only? Basicamente para inibir
+    brechas de segurança... também é por agilidade: se liberamos a rota e não
+    temos a action isso vai consumir recursos e ocupar o sistema (ele vai procurar
+    algo que não existe).
+
+  Dica: sempre copie e execute UM erro por vez! Dependendo do projeto, rodar o teste inteiro
+    vai consumir um tempão... rode linha por linha, etapa por etapa... divida
+    para conquistar.
+
+  Dica: macete para filtrar erros: vá no arquivo "rails_helper" no dir. spec
+      CURIOSIDADE: Expressões regulares? (um jeito de encontrar textos dentro de outros)
+
+  Formulários: em rails utilizamos formularios do rails helper (view helpers) ao inves
    dos forms html usuais, pois ele infere algumas coisas da convenção
-   quando tratando sua applicação e os erros.
+   quando tratando sua applicação e os erros. São várias abstrações.
+    forms: tag, for e with (cuidado com versões antigas... form tag e mais velhinho).
+    O with une os dois anteriores...
+
+    PARAMS - Tudo criado dentro de um formulário vem dentro do "hash" PARAMS (que nao e um hash mas funfa como um)
 
   Dica: View não é feita pra acessar camada de dados do objeto... instancie
-    o manufacturer na action, não na view. O controller e usado pra popular 
-    dados, não a view.
+    o objeto na action, não na view! O controller e usado pra popular 
+    dados, não a view. Ou seja: Objeto.new não serve... use @objeto = Objeto.new no controller.
+      POPULE DADOS no controller, não na view...
 
  Dica: usar doc da versão rails que você está usando...
 
- CURIOSIDADE: DESIGN PATTERNS? 
+ CURIOSIDADE: DESIGN PATTERNS? (Active Records por exemplo... é o que o rails usa)
+    São alguns padrões de projetos... são problemas mais antigos até que a linguagem de programação
 
   Create utiliza o metodo http POST, portanto não exige view: apenas encaminha
-  para uma no fim de sua execução...
+  para uma no fim de sua execução... (alias toda action que nao tem GET nao tem view... so encaminha para alguma)
+
+  Existem métodos de classe e métodos de objeto no Rails...

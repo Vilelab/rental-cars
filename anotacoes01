@@ -35,10 +35,14 @@ Depois de instalar a gem (rspec-rails), crie uma pasta chamada FEATURES em SPEC,
 FEATURES é a past de testes padrão para o Capybara
   FEATURE - Traz uma funcionalidade. Ex.: "Visitor open home page", ...
   CENÁRIO - Geralmente o primeiro é um de sucesso, depois temos outros "CPF inválido", "em branco", "Duplicado",... são situações
-    que vc estabelece com seu time, de forma a testar seu código
-
+    que vc estabelece, imagina com seu time, de forma a testar seu código
+TDD é um conceito muito importante... dá uma forma de medir nossa produtividade... diferentemente de quem programa
+a base de HORSE GO (hehe)
 
 Dicas: não saia instalando plugins atrás do outro... isso gera excesso de código que vc nem sabe para que serve...
-       idem com o generate... tome cuidado
+       idem com o generate... tome cuidado... excesso de código gera falhas de segurança, além disso prejudica
+	nosso aprendizado
 
 
+No dir. layouts temos o arquivinho "application.html.erb" que vai renderizar nossa view (palavra chave yield)
+Se você for mexer com boostrap é bom conhecer...

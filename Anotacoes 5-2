@@ -1,0 +1,29 @@
+xscenario 'successfully'
+
+PUT - manipular os objetos de posição dentro da coleção...
+  E meio que jogar um objeto inteiro em uma nova posição
+
+
+PATCH
+  Correção em um objeto que já existe
+
+Requisições HTTP funcionam de forma independente...
+
+
+
+INTERNACIONALIZACAO (I18n)
+  Traduzir para multiplas linguas o seu app
+LOCALIZACAO (L10n)
+  Formatar dados de acordo com o pais/loc. do app
+
+PAssos pra instalar o i18n: (tem nas docs... eh so dar uma procurada)
+	-  va em config/initializers
+	-  va em config/environments/development.rb e digite o "config.time_zone = "America/Sao_Paulo"
+        -  coloque em config/locales o arquivo "pt-BR.yml" (tem no git, e a traducao pra pt)
+
+
+Principais metodos: TRANSLATE e LOCALIZE
+
+ARRANGE
+ACT
+ASSERT

@@ -10,7 +10,7 @@ class CarModelsController < ApplicationController
   def new
     @car_model = CarModel.new
     @manufacturers = Manufacturer.all
-    @carcategories  = Carcategory.all
+    @car_categories  = CarCategory.all
   end
 
 
@@ -25,6 +25,6 @@ class CarModelsController < ApplicationController
 
   def car_model_params
     params.require(:car_model).permit(:name, :motorization,
-                                      :year, :fuel_type, :manufacturer_id, :carcategory_id)
+                                      :year, :fuel_type, :manufacturer_id, :car_category_id)
   end
 end

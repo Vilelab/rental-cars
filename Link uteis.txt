@@ -1,0 +1,35 @@
+Guru SP - Associação que divulga e ensina programação em RUBY
+
+
+Rails Guides (também possui tradução em portugês... apesar de incompleta)
+
+
+
+Rails usa MVC... pesquise a respeito! A v. 6 precisa do yarn pré-intalado (e do node tbm)
+
+Rubygems (formato que Ruby usa para compartilhar códigos... 
+            através das gems compilamos e disponibilizamos código p outras pessoas)
+
+
+
+
+Bunlder (ferramenta da cominidade Ruby que foi incorporada recentemente - apesar de muito usada)
+
+
+
+RVM (manager de instalações Ruby)
+
+
+
+GEM mais popular para escreve testes - RSPEC (rspec rails eh a q sera usada)
+CAPYBARA - Complementa o RSPEC... permite que testemos uma aplicação como
+se estivessemos navegando nela (crie um diretorio FEATURES dentro do dir. spec)
+Como instalá-las? Vá no arquivo gemfile de seu projeto gerado e edite-o... por fim dê o comando: 
+
+bundle install
+
+E, por fim:
+
+Rails generate rspec:install
+
+

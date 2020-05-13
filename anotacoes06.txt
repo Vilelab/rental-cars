@@ -1,21 +1,30 @@
 Links legais:
 
-  Coding Horror
+  Coding Horror (falou sobre id unificada e unica, vantagens e desv.)
 
 Quais sao os passos do teste?
-  -Arrange
-  -Act
-  -Assert
+  -Arrange (criar dados)
+  -Act     (interagir com o sistema)
+  -Assert  (validar o que está acontecendo, visualizar)
+  - Tem gente que gosta de escrever de baixo pra cima... outros de cima pra baixo
+
+NEssa aula basicamente damos um salto de complexidade: vamos criar amarrações entre modelos base...
 
 Associações: quando criamos um model com references, ele já implementa as associações e
-	cria índices... por isso e imporante utilizar
+	cria índices... por isso e imporante utilizar. Chamamos em POO de composição de classes
+
 O Rails so faz amarrações no momento de criação do model... se precisar alterar depois, vc
-terá de fazê-lo manualmente, no respectivo modelo...
+terá de fazê-lo manualmente, no respectivo modelo... ou seja: temos de adicionar as 
+referências na mão (belongs_to, has_many, e por ai vai) direto no modelo.
 
-Dica: Ao escrever testes, evite popular muito o banco de dados... muitas vezes criar dois objetos
-	é suficiente (por exemplo)
+"rails g model car_model year:integer manufacturer:references"
 
-save_page: debug do capybara
+Dica: Ao escrever testes, evite popular muito o banco de dados... só crie objetos a medida
+      de que vai precisar deles para realizar seu teste...
+
+CURIOSIDADE - save_page: eh um metodo de debug do capybara (ou seja, focado em depuração)
+  ele sava o html que o capy ta vendo em determinada parte do seu codigo... so que ele eh meio lento
+  e fica gerando arquivo...
 
 Extras:
-	- Normalização de dados
+	- Normalização de dados 

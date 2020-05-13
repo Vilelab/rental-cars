@@ -9,7 +9,7 @@
   <dt>Combustível: </dt>
   <dd><%= @car_model.fuel_type %></dd>
   <dt>Categoria: </dt>
-  <dd><%= @car_model.carcategory.name %></dd>
+  <dd><%= @car_model.car_category.name %></dd>
   <dt>Diária: </dt>
-  <dd><%= number_to_currency @car_model.carcategory.daily_rate %></dd>
+  <dd><%= number_to_currency @car_model.car_category.daily_rate %></dd>
 </dl>
