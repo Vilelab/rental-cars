@@ -13,7 +13,7 @@ feature 'Admin register valid subsidiary' do
     fill_in 'Endereço', with: 'Rua das tramóias'
     click_on 'Enviar'
 
-    expect(page).to have_content('Nome e CNPJ devem ser únicos')
+    expect(page).to have_content('Name já está em uso')
   end
 
   scenario 'and cnpj must be unique' do
@@ -28,7 +28,7 @@ feature 'Admin register valid subsidiary' do
     fill_in 'Endereço', with: 'Rua das tramóias'
     click_on 'Enviar'
 
-    expect(page).to have_content('Nome e CNPJ devem ser únicos')
+    expect(page).to have_content('Cnpj já está em uso')
   end
 
   scenario 'and name can not be blank' do

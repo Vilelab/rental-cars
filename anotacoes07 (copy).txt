@@ -1,3 +1,11 @@
 CheatSheet (Capybara) - dê uma olhada
+É um resuminho bem legal...
+
+SELECT BOXES
+	Veja make select boxes with ease no rails guides
+	<%= f.label :manufacturer_id, 'Fabricante' %>
+  	<%= f.collection_select :manufacturer_id, @manufacturers, :id, :name %>
 
 
+Sobre validações: Não precisamos incluir mengasens de erro nos models
+se existe tradução (i18n por exemplo). Já exitem erros padrão (veja translation active record models no rails guides)

@@ -1,0 +1,26 @@
+PLUGINS VSCODE
+
+	Configure os atalhos uteis no VSCODE (instale o simple ruby erb por ex.)
+	Settings.json (arquivo para configurar preferências do seu ambiente)
+	Ative o emmet (muito util pra escrever tags html com pouco esforço).
+	CTRL+P - atalho util pra acessar o diretório corrente... abre uma barrinha de search
+
+
+Where: é um filtro que retorna uma coleção de seu banco de dados... o rails, por questões
+de performance, o limita para 11 casos (em sql tem um limit também). Não precisamos inclui-lo, pois
+as associations do rails já geram métodos como ele (em nosso caso, o has_many).
+	Onde poderia ser APLICADO: em car_categories_controller
+	VEJA: Retrievieng objects from database (no guides de Ruby) para uma lista de métodos como esse
+
+
+Testes unitários começam nessa aula... um tópico bem importante!
+Uso de contextos (strings simples) organiza bastante o código... tbm existe
+a convenção da cerquiha
+
+DICA: rspec spec -fd
+
+Também instalamos a gem 'cpf_cnpj' e falamos sobre VALIDAÇÕES CUSTOMIZADAS
+No rails guides tbm temos um topico falando sobre formatação em validações (procure por format)
+
+
+
