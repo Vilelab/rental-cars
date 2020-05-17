@@ -1,4 +1,6 @@
 class RentalsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :new, :create]
+
   def index
     @rentals = Rental.all
   end
@@ -10,7 +12,8 @@ class RentalsController < ApplicationController
   end
 
   def create
-    @rental = Rental.create(params.require(:rental).permit(:start_date, :end_date, :customer_id, :car_category_jd))
+    @rental = Rental.create(params.require(:rental).permit(:start_date, :end_date,
+                                                            :customer_id, :car_category_jd))
     redirect_to rentals_path
   end
 end

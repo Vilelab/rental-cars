@@ -1,0 +1,81 @@
+Autenticação é diferente de Autorização
+
+Autenticação - É fazer login/logout, criar conta...
+Autorização  - Quem pode fazer isso (admin, user comum, etc)
+
+Vamos realizar AUTENTICAÇÃO
+	Usando a gem "devise"
+	Por padrão o devise não usa todos os módulos... vc deve libera-los caso precise
+	utilizar "config/initializers/devise.rb
+
+"ruby-toolbox.com"
+	Site que tem um ranking de gems...
+
+
+Alteração em "app/views/layouts/application.html.erb"
+	OBS: Faz parte das instruções de instalação... geralmente dá pra encontrá-las no repo do GIT
+	  <body>
+            <%= flash[:notice] %>
+            <%= yield %>
+          </body>
+
+
+Ao gerar models com devise (ou associar um já criado, o comando eh o mesmo), ele gerará 
+diversas rotas para o modelo em questão.
+
+Quando queremos fazer uma espécie de menu, temos que mexer em "views/layouts/application.html.erb"
+	Essa view estará disponível em todas as páginas... é exatamente por isso que servirá
+		como menu para a gente.
+
+Como converter para I18N?
+	Criando o arquivo modelotralala.pt-BR.yml
+	Onde as mensagens de erro estarão traduzidas nesse modelinho...
+	Também fiz um arquivo para o model "user", o legal é que, especificando
+	  direitinho os atributos, nem precisamos colocar label no formulário lá da view...
+
+
+O DEVISE também gera VIEWS automaticamente pra você! Eles estarão em devise/sessions)
+	Adicione .log_in (veja o porque em lazy lookupe no ruby guides)
+
+	<div class="actions">
+    <%= f.submit t('.log_in') %>
+  </div>
+
+
+Qual o verbo para o botão sair?
+	Rails routes! destroy_user_session (VERBO DELETE)
+	Altere em "views/layouts/application.html.erb"
+Também vamos baixar a tradução em PT-BR do devise... procure uma recente no git
+	Veja nos comentários se existem erros (geralmente quem utilizou antes os aponta)
+
+ALERTA DE SEGURANCA: Sumir com um botão nao adianta nada! Se digitarmos apenas a rota e conseguirmos acessá-la, mesmo
+	não tendo um botão para tal (e sem logar aliás), teremos uma falha gravíssima.
+
+	Precisamos fazer testes de validação para nossos testes de rental também (neste caso, em admin_register_rental e user_view_rental)
+	Vá ao controller e também faça isso, visando autenticar o user: (mais um método de devise)
+		before_action :authenticate_user!, only: [:index, :new, :create]
+		O ideal é incluir em application_controller, e fazer os outros herdarem o "before_action: authenticate_member!"
+		Mas, pra isso, é necessário fazer várias alterações nos testes (veja o video em 1:38)
+		Index, new, show... você terá de estar logado pra fazer tudo isso (É TESTE PRA DEDÉU :| )
+
+------------------------------------------------------------------------------------------------------
+Começando com AUTORIZAÇÃO:
+
+Tomando na wiki da gem devise, faremos uma alteração no arquivo "spec/rails_helper" para gerarmos um login
+e senha automáticos (pra não precisar ficar logando td hora q rodar teste e facilitar as coisas...)
+	RSpec.configure do |config|
+	  config.include Warden::Test::Helpers
+
+	Depois vá no teste (admin_register_rental) e escreva:
+		login_as user, scope: :user
+	OBS: tem tudo na doc.
+
+
+
+TAREFA:
+	Levar os links da index pra app/views/layouts/application.html.erb e arrumar os erros
+
+
+
+
+
