@@ -16,3 +16,5 @@ SEGUNDA PARTE
     Form de busca genérico (index de rental)
     Precisamos fazer uma rota pra search (adding more restful actions)
       Vamos usar uma rota de collection
+
+BUSCAR UM CLIENTE
