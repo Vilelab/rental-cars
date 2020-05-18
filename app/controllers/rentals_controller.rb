@@ -16,5 +16,16 @@ class RentalsController < ApplicationController
                                                             :customer_id, :car_category_jd))
     redirect_to rentals_path
   end
+
+  #da pra fazer a busca na view também... no controller tbm é comum
+  def search    
+    @q = params[:q]
+    @rental = Rental.find_by(code: @q.upcase) #find by e uma busca unica
+    if @rental.blank? || @q.blank?
+      @rentals = Rental.all
+      flash.now[:alert] = "Nenhum resultado encontrado para: #{params[:q]}" #coloque o flash alert em application
+      render :index
+    end 
+  end
 end
 

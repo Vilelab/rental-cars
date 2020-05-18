@@ -53,10 +53,18 @@ ALERTA DE SEGURANCA: Sumir com um botão nao adianta nada! Se digitarmos apenas 
 
 	Precisamos fazer testes de validação para nossos testes de rental também (neste caso, em admin_register_rental e user_view_rental)
 	Vá ao controller e também faça isso, visando autenticar o user: (mais um método de devise)
-		before_action :authenticate_user!, only: [:index, :new, :create]
+		(CALLBACK) - before_action :authenticate_user!, only: [:index, :new, :create]
 		O ideal é incluir em application_controller, e fazer os outros herdarem o "before_action: authenticate_member!"
 		Mas, pra isso, é necessário fazer várias alterações nos testes (veja o video em 1:38)
+			Ex: SUMIR COM BOTOES SEM ESTAR LOGADO
+			    FECHAR ROTAS DE GET COM TESTE
+			    E POR AI VAI...
 		Index, new, show... você terá de estar logado pra fazer tudo isso (É TESTE PRA DEDÉU :| )
+		OBS: Dá pra fazer isso controller a controller tbm, ai fica mais facil...
+
+
+CURIOSIDADE: #TODO (pra não quebrar a linha de pensamento quando estudando... são notas rápidas
+	que tu pode colocar nos programas... mas não é sempre recomendável (n entendi pq)
 
 ------------------------------------------------------------------------------------------------------
 Começando com AUTORIZAÇÃO:

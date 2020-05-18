@@ -1,0 +1,18 @@
+Nessa aula começaremos lidando com BUSCA!
+CURIOSIDADE: VEJA A GEM BYEBUG
+CURIOSIDADE: VEJA RSPEC  MATCHERS!
+PRIMEIRA PARTE: GERAR UM CODIGO
+  Todo método que termina com interrogação vai ter um matcher
+"spec/models/rental_spec"
+
+Precisaremos de Callbacks (VEJA MAIS EM GUIDES)
+
+Vamos definir o metodo gerador de codigo no modelo de rental (app/models/rental)
+  Ruby tem um metodo chamado alphanumeric (pertence ao securerandom)
+
+SEGUNDA PARTE
+  Crie o teste user_search_rental_spec.rb
+  Altere o index para efetuar a busca (precisaremos de um formulario)
+    Form de busca genérico (index de rental)
+    Precisamos fazer uma rota pra search (adding more restful actions)
+      Vamos usar uma rota de collection
