@@ -1,0 +1,28 @@
+CURIOSIDADE: RAILSCONF
+CURIOSIDADE: 12factor (the twelve factor)
+CURIOSIDADE: -> (Lambda) Passar função como argumento
+
+SQLITE - Mais uma doc util
+
+BUSCA NO SEARCH EM CUSTOMER CONTROLLER (busca por nome parcial)
+  ACTIVE RECORD QUERYING (EM GUIDES) - Veja Array conditions
+    Para fazermos a busca:
+      @customers = Customer.where('name LIKE ?', "%{params[:q]}%")
+      Tena sempre cuidado com sql injection
+
+    Uma opção mais interessante: fazer a busca no model, e não no CONTROLLER
+    como acima...
+    Faça um método no model customer! Chamaremos de search, e assim limparemos o controller
+
+BUSCA POR CPF
+  Façamos o teste
+  O legal de fazer as coisas no model é que precisamos fazer alterações minimas
+  nos outros lugar (a gt centraliza a modificação)
+  Podemos concatenar clasulas de where... so que o rails nao faz duas querys: monta apenas uma
+  e junta as duas querys... ou seja: nao da pra concatenar... pra isso usaremos um "or"
+    O or não é performático... até porque estamos buscando em duas tabelas enormes
+
+
+
+INICIAR UMA LOCAÇÂO
+  
